@@ -1,38 +1,208 @@
-.App {
-  text-align: center;
+body {
+    margin: 0;
+    font-size: 1.1rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+    box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.wrapper {
+    min-height: 100vh;
+    background: #CC2B5E;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.calculator {
+    background: rgba(80, 165, 187, 0.5);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 80px;
+    width: 400px;
+    color: black;
+    padding: 2rem 1.5rem;
+    border-radius: 5px;
+
+    display: grid;
+    gap: 1rem;
+
+
+    grid-template-areas:
+        "display display display display"
+        "small  bracket  perc ac"
+        "btn7 btn8 btn9 divide"
+        "btn4 btn5 btn6 btnx"
+        "btn1 btn2 btn3 subtract"
+        "btn0 dot equals add";
+
+    position: relative;
+    backdrop-filter: blur(10px);
 }
 
-.App-link {
-  color: #61dafb;
+.calculator div {
+
+    /* width: 50px;  */
+    height: 50px;
+    background: #F5F5F5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.display {
+    background: #F5F5F5;
+    box-shadow: 10px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 14px;
+    grid-area: display;
+}
+
+.calculator div.display {
+    font-family: 'Digital-7', arial;
+    grid-area: display;
+    display: flex;
+    justify-content: flex-end;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.btn {
+    box-shadow: 10px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.btn-Small {
+    grid-area: Small;
+}
+
+.btn-bracket {
+    grid-area: bracket;
+
+}
+
+.btn-prec {
+    grid-area: perc;
+
+}
+
+.btn-ac {
+    grid-area: ac;
+
+}
+
+.btn-7 {
+    grid-area: btn7;
+
+}
+
+.btn-8 {
+    grid-area: btn8;
+
+}
+
+.btn-9 {
+    grid-area: btn9;
+
+}
+
+.btn-divide {
+    grid-area: divide;
+
+}
+
+.btn-4 {
+    grid-area: btn4;
+
+}
+
+.btn-5 {
+    grid-area: btn5;
+
+}
+
+.btn-6 {
+    grid-area: btn6;
+}
+
+
+.btn-x {
+    grid-area: btnx;
+
+}
+
+.btn-1 {
+    grid-area: btn1;
+
+}
+
+.btn-2 {
+    grid-area: btn2;
+
+}
+
+.btn-3 {
+    grid-area: btn3;
+
+}
+
+.btn-subtract {
+    grid-area: subtract;
+
+}
+
+.btn-0 {
+    grid-area: 0;
+
+}
+
+.btn-dot {
+    grid-area: dot;
+
+}
+
+.btn-equals {
+    grid-area: equals;
+
+}
+
+.btn-add {
+    grid-area: add;
+
+}
+
+.circle {
+    background: #DE6262;
+    opacity: 0.95;
+    box-shadow: inset 0px 10px 4px -1px rgba(0, 0, 0, 0.25);
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    position: relative;
+    left: 150px;
+    top: 200px;
+
+}
+
+.Prank {
+    animation: shake 0.5s ease-in;
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(150px);
+    }
+
+    50% {
+        transform: translateX(-15px);
+
+    }
+
+    75% {
+        transform: translateX(5px);
+    }
+
+    100% {
+        transform: translateX(-10px);
+    }
+
 }
